@@ -24,4 +24,9 @@ public class FacultyAction extends AverageCalculation{
             throws FacultyWithoutGroupsException, GroupWithoutStudentsException {
         return calculateAverageGrade(getStudentsOfFaculty(faculty), subjectType);
     }
+
+    public static boolean hasGroup(Faculty faculty, String groupName)
+            throws FacultyWithoutGroupsException {
+        return faculty.getGroups().stream().anyMatch(group -> group.getGroupName().equals(groupName));
+    }
 }
