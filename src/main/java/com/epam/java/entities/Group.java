@@ -30,7 +30,7 @@ public class Group implements Comparable<Group> {
         return students;
     }
 
-    public void setStudents(Student student) {
+    public void setStudent(Student student) {
         students.add(student);
     }
 

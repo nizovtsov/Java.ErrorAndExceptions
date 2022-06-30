@@ -30,7 +30,7 @@ public class Faculty {
         return groups;
     }
 
-    public void setGroups(String groupName) {
+    public void setGroup(String groupName) {
         groups.add(new Group(groupName));
     }
 

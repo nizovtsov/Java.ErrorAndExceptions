@@ -48,7 +48,7 @@ public class Student {
         return grades;
     }
 
-    public void setGrades(SubjectType subject, int grade) throws GradeOutOfRangeException, StudentWithoutSubjectException {
+    public void setGrade(SubjectType subject, int grade) throws GradeOutOfRangeException, StudentWithoutSubjectException {
         if(!getSubjectTypes().contains(subject)){
             setSubjectType(subject);
         }

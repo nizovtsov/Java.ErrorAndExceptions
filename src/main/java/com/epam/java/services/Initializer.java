@@ -19,12 +19,12 @@ public abstract class Initializer {
 
     protected abstract void setGrades() throws GradeOutOfRangeException,
             StudentWithoutSubjectException, GroupWithoutStudentsException,
-            FacultyWithoutGroupsException;
+            FacultyWithoutGroupsException, UniversityWithoutFacultiesException;
 
     public University initializeUniversity() throws StudentWithoutSubjectException, GroupWithoutStudentsException, FacultyWithoutGroupsException,UniversityWithoutFacultiesException,GradeOutOfRangeException{
-        setStudents();
-        setGroups();
         setFaculties();
+        setGroups();
+        setStudents();
         setGrades();
         return university;
     }
