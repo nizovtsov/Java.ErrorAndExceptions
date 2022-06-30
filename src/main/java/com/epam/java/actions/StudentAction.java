@@ -22,10 +22,8 @@ public class StudentAction extends AverageCalculation {
     }
 
     public static double getAverageGradesBySubject(Student student, SubjectType subjectType) {
-
         LinkedList<Student> studentList = new LinkedList<>();
         studentList.add(student);
         return calculateAverageGrade(studentList, subjectType);
-
     }
 }

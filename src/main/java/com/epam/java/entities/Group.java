@@ -54,10 +54,11 @@ public class Group implements Comparable<Group> {
 
     @Override
     public String toString() {
-        return "Group{" +
-                "groupName='" + groupName + '\'' +
-                ", students=" + students +
-                '}';
+        StringBuilder groupInString = new StringBuilder("Group= " + groupName + "\n");
+        for (Student student : students) {
+            groupInString.append(student.toString());
+        }
+        return groupInString.toString();
     }
 
     @Override

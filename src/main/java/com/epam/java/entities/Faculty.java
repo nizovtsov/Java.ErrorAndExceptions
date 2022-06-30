@@ -24,8 +24,8 @@ public class Faculty {
     }
 
     public Set<Group> getGroups() throws FacultyWithoutGroupsException {
-        if(groups.isEmpty()){
-            throw new FacultyWithoutGroupsException("На факультете "+ getFacultyName()+ " отсутствуют группы!");
+        if (groups.isEmpty()) {
+            throw new FacultyWithoutGroupsException("На факультете " + getFacultyName() + " отсутствуют группы!");
         }
         return groups;
     }
@@ -34,7 +34,7 @@ public class Faculty {
         groups.add(new Group(groupName));
     }
 
-    public Group getGroup(String groupName) throws FacultyWithoutGroupsException{
+    public Group getGroup(String groupName) throws FacultyWithoutGroupsException {
         Optional<Group> optionalGroup = getGroups().stream().
                 filter(group -> group.getGroupName().equals(groupName)).findFirst();
         return optionalGroup.orElse(null);
@@ -62,9 +62,10 @@ public class Faculty {
 
     @Override
     public String toString() {
-        return "Faculty{" +
-                "facultyName='" + facultyName + '\'' +
-                ", groups=" + groups +
-                '}';
+        StringBuilder facultiesInString = new StringBuilder("Faculty= " + facultyName + "\n");
+        for (Group group : groups) {
+            facultiesInString.append(group.toString());
+        }
+        return facultiesInString.toString();
     }
 }

@@ -12,7 +12,7 @@ public class University {
 
     public ArrayList<Faculty> getFaculties() throws UniversityWithoutFacultiesException{
         if(faculties.isEmpty()){
-            throw new UniversityWithoutFacultiesException("В университете нет ни одной группы!");
+            throw new UniversityWithoutFacultiesException("В университете нет ни одного факультета!");
         }
         return faculties;
     }
@@ -23,8 +23,11 @@ public class University {
 
     @Override
     public String toString() {
-        return "University{" +
-                "faculties=" + faculties +
-                '}';
+        StringBuilder facultiesInString = new StringBuilder();
+        for (Faculty faculty : faculties) {
+            facultiesInString.append("\n");
+            facultiesInString.append(faculty);
+        }
+        return facultiesInString.toString();
     }
 }

@@ -49,7 +49,7 @@ public class Student {
     }
 
     public void setGrade(SubjectType subject, int grade) throws GradeOutOfRangeException, StudentWithoutSubjectException {
-        if(!getSubjectTypes().contains(subject)){
+        if (!getSubjectTypes().contains(subject)) {
             setSubjectType(subject);
         }
         grades.setGrade(subject, grade);
@@ -64,11 +64,11 @@ public class Student {
         return subjectTypes;
     }
 
-    public boolean isStudySubject(SubjectType subjectType){
+    public boolean isStudySubject(SubjectType subjectType) {
         return subjectTypes.contains(subjectType);
     }
 
-    public void setSubjectType(SubjectType subject){
+    public void setSubjectType(SubjectType subject) {
         subjectTypes.add(subject);
         grades.addSubject(subject);
     }
@@ -100,11 +100,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", studentID=" + studentID +
-                ", grades=" + grades +
-                '}';
+        return "Student " + studentID + " " + name + " " + surname + " " + grades + "\n";
     }
 }

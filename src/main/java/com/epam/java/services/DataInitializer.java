@@ -82,7 +82,7 @@ public class DataInitializer extends Initializer {
             for (Group group : faculty.getGroups()) {
                 for (Student student : group.getStudents()) {
                     for (SubjectType studentSubject : student.getSubjectTypes()) {
-                        int countGrades = (int) Math.random() * 4;
+                        int countGrades = (int) (Math.random() * 4);
                         for (int i = 0; i < countGrades; i++) {
                             student.setGrade(studentSubject, (int) ((Math.random() * 10) + 1));
                         }

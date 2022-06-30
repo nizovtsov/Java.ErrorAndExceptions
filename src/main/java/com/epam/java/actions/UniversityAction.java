@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-public class UniversityAction extends AverageCalculation {
+public class UniversityAction extends AverageCalculation{
     public static List<Student> getStudentsOfUniversity(University university)
             throws UniversityWithoutFacultiesException, FacultyWithoutGroupsException, GroupWithoutStudentsException {
         ArrayList<Student> students = new ArrayList<>();
